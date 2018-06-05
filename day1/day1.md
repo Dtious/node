@@ -92,6 +92,7 @@ request 下载 模拟请求
 cheerio 处理html结构的后端版jquery
 mysql 处理mysql数据库
 express 后端框架
+body-parser express处理请求体的模块
 
 # 自定义模块
 
