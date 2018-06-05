@@ -90,7 +90,35 @@ net TCP/IP
 gulp 压缩合并处理代码
 request 下载 模拟请求
 cheerio 处理html结构的后端版jquery
+mysql 处理mysql数据库
+express 后端框架
 
+# 自定义模块
+
+自己写的模块需要用一个module.exports导出，再另外一份JS里面require该模块的路径
+
+导出
+
+```js
+//tool.js
+module.exports = {
+	plus: function(a, b) {
+		return a + b;
+	},
+	mult: function(a, b) {
+		return a * b;
+	}
+}
+```
+
+导入
+
+```js
+var tool = require("./tool.js");
+console.log(tool);
+console.log(tool.plus(9,8));
+console.log(tool.mult(9,8));
+```
 
 
 # 异步和同步

